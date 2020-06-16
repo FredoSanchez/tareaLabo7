@@ -10,37 +10,39 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.uca.capas.dao.EstudianteDAO;
 import com.uca.capas.domain.Estudiante;
+import com.uca.capas.repositories.EstudianteRepo;
 
 @Service
 public class EstudianteServiceImpl implements EstudianteService {
 
 	@Autowired
-	EstudianteDAO estudianteDAO;
+	EstudianteRepo estudianteRepo;
+	//EstudianteDAO estudianteDAO;
 	
 	@Override
 	public List<Estudiante> findAll() throws DataAccessException {
 		// TODO Auto-generated method stub
-		return estudianteDAO.findAll();
+		return estudianteRepo.findAll();
 	}
 
 	@Override
 	public Estudiante findOne(Integer code) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return estudianteDAO.findOne(code);
+		return estudianteRepo.getOne(code);
 	}
 
 	@Override
 	@Transactional
 	public void save(Estudiante estudiante) throws DataAccessException {
 		// TODO Auto-generated method stub
-		estudianteDAO.save(estudiante);
+		estudianteRepo.save(estudiante);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Integer codigoEstudiante) throws DataAccessException {
 		// TODO Auto-generated method stub
-		estudianteDAO.delete(codigoEstudiante);
+		estudianteRepo.deleteById(codigoEstudiante);
 	}
 
 }
