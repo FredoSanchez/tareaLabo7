@@ -126,8 +126,8 @@ public class MainController {
 		List<Estudiante> estudiantes = null;
 		
 		try {
-			//estudiantes = estudianteService.filtrarPor(cadena);
-			estudiantes = estudianteService.empiezaCon(cadena);
+			estudiantes = estudianteService.filtrarPor(cadena);
+			//estudiantes = estudianteService.empiezaCon(cadena);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

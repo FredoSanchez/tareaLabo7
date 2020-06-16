@@ -15,4 +15,11 @@ public interface EstudianteRepo extends JpaRepository<Estudiante, Integer> {
 	
 	@Query(nativeQuery=true, value="SELECT * FROM public.estudiante ORDER BY estudiante.id_estudiante ASC")
 	public List<Estudiante> mostrarTodos() throws DataAccessException;
+	
+	//@Query(nativeQuery=true, value="Select * from public.estudiante where nombre = :cadena")
+	@Query(nativeQuery=true, value="Select * from public.estudiante where nombre = ?1")
+	public List<Estudiante> mostrarporNombre(String cadena) throws DataAccessException;
+	
+	@Query(nativeQuery=true, value="select nombre, apellido from public.estudiante")
+	public List<Object[]> pruebaDTO() throws DataAccessException;
 }

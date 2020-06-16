@@ -48,12 +48,14 @@ public class EstudianteServiceImpl implements EstudianteService {
 	@Override
 	public List<Estudiante> filtrarPor(String cadena) throws DataAccessException {
 		//return estudianteRepo.findBynombre(cadena);
-		return estudianteRepo.findBynombre(cadena);
+		//return estudianteRepo.findByApellidoStartingWith(cadena);
+		return estudianteRepo.mostrarporNombre(cadena);
 	}
 	
 	@Override
 	public List<Estudiante> empiezaCon(String cadena) throws DataAccessException {
 		return estudianteRepo.findByApellidoStartingWith(cadena);
-		
 	}
+	
+	
 }
