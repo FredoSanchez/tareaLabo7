@@ -44,5 +44,9 @@ public class EstudianteServiceImpl implements EstudianteService {
 		// TODO Auto-generated method stub
 		estudianteRepo.deleteById(codigoEstudiante);
 	}
-
+	@Override
+	public List<Estudiante> filtrarPor(String cadena) throws DataAccessException {
+		//return estudianteRepo.findBynombre(cadena);
+		return estudianteRepo.findBynombre(cadena);
+	}
 }

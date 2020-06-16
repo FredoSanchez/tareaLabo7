@@ -119,4 +119,20 @@ public class MainController {
 		mav.setViewName("agregarEstudiante");
 		return mav;
 	}
+	
+	@PostMapping(value="/filtrar")
+	public ModelAndView filtro(@RequestParam(value="nombre") String cadena) {
+		ModelAndView mav = new ModelAndView();
+		List<Estudiante> estudiantes = null;
+		
+		try {
+			estudiantes = estudianteService.filtrarPor(cadena);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.addObject("estudiantes", estudiantes);
+		mav.setViewName("main");
+		
+		return mav;
+	}
 }
