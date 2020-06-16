@@ -49,4 +49,10 @@ public class EstudianteServiceImpl implements EstudianteService {
 		//return estudianteRepo.findBynombre(cadena);
 		return estudianteRepo.findBynombre(cadena);
 	}
+	
+	@Override
+	public List<Estudiante> empiezaCon(String cadena) throws DataAccessException {
+		return estudianteRepo.findByApellidoStartingWith(cadena);
+		
+	}
 }

@@ -9,4 +9,6 @@ import com.uca.capas.domain.Estudiante;
 
 public interface EstudianteRepo extends JpaRepository<Estudiante, Integer> {
 	public List <Estudiante> findBynombre(String cadena) throws DataAccessException;
+	
+	public List <Estudiante> findByApellidoStartingWith(String cadena) throws DataAccessException;
 }
