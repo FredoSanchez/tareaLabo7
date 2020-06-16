@@ -44,6 +44,10 @@
     	<input type="submit" value="Filtrar">
 	</form>
 	<br>
+	<form th:action="@{/estudiante}">
+    	<input type="submit" value="Home">
+	</form>
+	<br>
 	<form th:action="@{/borrarEstudiante}" method="post">
 		<label>Borrar estudiante por codigo</label><input type="number" name="codigo"><br>
     	<input type="submit" value="Borrar">

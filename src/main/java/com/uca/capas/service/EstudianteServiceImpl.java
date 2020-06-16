@@ -22,7 +22,8 @@ public class EstudianteServiceImpl implements EstudianteService {
 	@Override
 	public List<Estudiante> findAll() throws DataAccessException {
 		// TODO Auto-generated method stub
-		return estudianteRepo.findAll();
+		//return estudianteRepo.findAll();
+		return estudianteRepo.mostrarTodos();
 	}
 
 	@Override
