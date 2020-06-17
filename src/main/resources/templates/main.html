@@ -26,6 +26,9 @@
 				<th th:text="${estudiante.apellido}"/>
 				<th th:text="${estudiante.edad}"/>
 				<th th:text="${estudiante.estadoDelegate}"/>
+				<th>
+	            	<a th:href="@{'/update/' + ${estudiante.codigoEstudiante}}">Editar</a>
+	            </th>
 			</tr>
 		</th:block>
 	</table>
@@ -52,6 +55,6 @@
 		<label>Borrar estudiante por codigo</label><input type="number" name="codigo"><br>
     	<input type="submit" value="Borrar">
 	</form>
-	
+
 </body>
 </html>
